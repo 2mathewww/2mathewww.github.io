@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2mathewww — Developer</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Scan Line Effect -->
+    <div class="scan-line"></div>
+
+    <!-- Landing Page -->
+    <section class="landing">
+        <div class="landing-content">
+            <h1 class="glitch" data-text="2mathewww">2mathewww</h1>
+            <p class="subtitle">Backend Developer</p>
+        </div>
+
+        <div class="scroll-hint">
+            scroll down
+            <span>↓</span>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- About Terminal -->
+            <div class="terminal" id="about">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-title">about.txt</div>
+                </div>
+                <div class="status-bar">
+                    <span><span class="status-dot"></span>ONLINE</span>
+                    <span id="time"></span>
+                </div>
+                <div class="terminal-body">
+                    <div class="section-header">
+                        <span class="section-num">01</span>
+                        <span class="section-title">About Me</span>
+                    </div>
+
+                    <p class="prompt-line">cat README.md</p>
+
+                    <div class="output">
+                        <div class="output-line">Name: 2mathewww</div>
+                        <div class="output-line">Role: Backend Developer</div>
+                        <div class="output-line">Location: Brooklyn, Indonesia</div>
+                        <div class="output-line">Experience: 7+ years</div>
+                    </div>
+
+                    <p class="about-text">
+                        Passionate about clean code, open source, and building 
+                        products that make a difference.
+                    </p>
+
+                    <div class="nav-links">
+                        <a href="#projects">./projects</a>
+                        <a href="#gallery">./gallery</a>
+                        <a href="#music">./music</a>
+                        <a href="#contact">./contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub Projects Terminal -->
+            <div class="terminal" id="projects">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-title">github://repos</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="section-header">
+                        <span class="section-num">02</span>
+                        <span class="section-title">GitHub Projects</span>
+                    </div>
+
+                    <div class="github-header">
+                        <div class="github-input">
+                            <span hidden style="opacity: 0.5;">$</span>
+                            <input readonly="readonly" type="text"  id="github-username" placeholder="username" value="2mathewww">
+                            <button hidden onclick="fetchGitHubRepos()">fetch</button>
+                        </div>
+                        <div class="github-stats" id="github-stats"></div>
+                    </div>
+
+                    <p class="prompt-line">curl github.com/<span id="display-username">2mathewww</span></p>
+
+                    <div class="repo-tree" id="repo-tree">
+                        <div class="loading">
+                            <span class="loading-spinner">◐</span> Fetching...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Terminal -->
+            <div class="terminal" id="gallery">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-title">gallery/</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="section-header">
+                        <span class="section-num">03</span>
+                        <span class="section-title">Gallery</span>
+                    </div>
+
+                    <p class="prompt-line">ls ./waifus/*.png</p>
+
+                    <div class="gallery-grid" style="margin-top: 12px;">
+                        <div class="gallery-item" onclick="openLightbox('https://files.catbox.moe/fkh0pb.jpg')">
+                            <img src="https://files.catbox.moe/fkh0pb.jpg" alt="Project 1">
+                            <div class="gallery-label">elaina.png</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox('https://files.catbox.moe/j3wqzf.png')">
+                            <img src="https://files.catbox.moe/j3wqzf.png" alt="Project 2">
+                            <div class="gallery-label">hanni.png</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox('https://picsum.photos/seed/p3/800/800')">
+                            <img src="https://picsum.photos/seed/p3/400/400" alt="Project 3">
+                            <div class="gallery-label">analytics.png</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox('https://picsum.photos/seed/p4/800/800')">
+                            <img src="https://picsum.photos/seed/p4/400/400" alt="Project 4">
+                            <div class="gallery-label">ui-design.png</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox('https://picsum.photos/seed/p5/800/800')">
+                            <img src="https://picsum.photos/seed/p5/400/400" alt="Project 5">
+                            <div class="gallery-label">landing.png</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox('https://picsum.photos/seed/p6/800/800')">
+                            <img src="https://picsum.photos/seed/p6/400/400" alt="Project 6">
+                            <div class="gallery-label">admin.png</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Music Terminal -->
+            <div class="terminal" id="music">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-title">music.sh</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="section-header">
+                        <span class="section-num">04</span>
+                        <span class="section-title">Now Playing</span>
+                    </div>
+
+                    <p class="prompt-line">./play --track="favorite"</p>
+
+                    <div class="music-wrapper" style="margin-top: 12px;">
+                        <div class="now-playing">
+                            <div class="eq-bars">
+                                <div class="eq-bar"></div>
+                                <div class="eq-bar"></div>
+                                <div class="eq-bar"></div>
+                                <div class="eq-bar"></div>
+                                <div class="eq-bar"></div>
+                            </div>
+                            <span>STREAMING</span>
+                        </div>
+                        <iframe 
+                            src="https://open.spotify.com/embed/track/7gqdZpe7MlTLA59viClLoY" 
+                            frameBorder="0" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy"
+                            title="Spotify Track"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Terminal -->
+            <div class="terminal" id="contact">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-title">contact.json</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="section-header">
+                        <span class="section-num">05</span>
+                        <span class="section-title">Contact</span>
+                    </div>
+
+                    <p class="prompt-line">cat ./links.json</p>
+
+                    <div class="contact-grid" style="margin-top: 12px;">
+                        <a href="mailto:2mathewww@gmail.com" class="contact-item">
+                            <span>📧</span>
+                            <span>2mathewww@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/2mathewww" target="_blank" class="contact-item">
+                            <span>⌨️</span>
+                            <span>github.com/2mathewww</span>
+                        </a>
+                        <!-- <a href="https://linkedin.com/in/2mathewww" target="_blank" class="contact-item">
+                            <span>💼</span>
+                            <span>linkedin/2mathewww</span>
+                        </a> -->
+                        <!-- <a href="https://twitter.com/2mathewww" target="_blank" class="contact-item">
+                            <span>🐦</span>
+                            <span>@2mathewww</span>
+                        </a> -->
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <span>© <span id="year"></span> 2mathewww</span>
+                    <a href="#" class="top-btn" onclick="scrollToTop(); return false;">↑ top</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">×</button>
+        <img id="lightbox-img" src="" alt="Gallery Image">
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
