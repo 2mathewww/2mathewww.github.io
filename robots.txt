@@ -30,11 +30,6 @@ Disallow:
 User-agent: yahoo-blogs/v3.9
 Disallow: 
 User-agent: *
-Disallow: 
-Disallow: /cgi-bin/
-Disallow: /
-Disallow: /
-Disallow: /
-Disallow: /
-Disallow: /
-Sitemap: https://me.2mathewww.my.id
+Allow: /
+Sitemap: https://me.2mathewww.my.id/sitemap.xml
+
